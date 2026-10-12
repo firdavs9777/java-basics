@@ -13,6 +13,9 @@ public class SwitchAndTernary {
         System.out.println(advice); // Try later
         int cheaper = 4300 < 5300 ? 4300 : 5300;
         System.out.println("Cheaper price: " + cheaper + " so'm"); // 4300
+
+         int age = 20;
+         if(age)
         // Tip: don't nest ternaries deeply. If it's hard to read, use if/else.
 
         // 2. Classic switch with break

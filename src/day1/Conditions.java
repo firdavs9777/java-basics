@@ -9,12 +9,7 @@ public class Conditions {
     public static void main(String[] args) {
         // 1. Basic if and else conditions
         boolean open = true;
-        boolean hasGas;
-        if (open) {
-            hasGas = true;
-        } else {
-            hasGas = false;
-        }
+        boolean hasGas = open; // TODO 1 ✅ was a 6-line if/else that just copied `open`
         if (hasGas) {
             System.out.println("Go to that station and get the gas");
         } else {
@@ -41,20 +36,35 @@ public class Conditions {
 
         // 4. Combining Options
         boolean hasGases = true;
-        int queue_last = 20;
+        int queueLast = 20; // TODO 2 ✅ renamed from queue_last (camelCase)
 
-        if (hasGases && queue_last == 20) {
+        if (hasGases && queueLast == 20) {
             System.out.println("Perfect, go!!");
         }
-        if (!hasGases || queue_last > 60) {
+        if (!hasGases || queueLast > 60) {
             System.out.println("Test Me");
         }
 
         // ===== Exercises =====
-        // TODO 1: Section 1 can be one line: `boolean hasGas = open;`. Rewrite it.
-        // TODO 2: Rename queue_last to queueLast (Java uses camelCase for variables).
-        // TODO 3: Given int year, print whether it is a leap year
-        //         (divisible by 4, but not by 100 unless also by 400). Test 2024, 1900, 2000.
-        // TODO 4: Given three ints a, b, c, print the largest using only if/else.
+        // TODO 3 ✅ Leap year: divisible by 4, but not by 100 unless also by 400.
+        //        Change year to 1900 (not leap) and 2000 (leap) and run again.
+        int year = 2024;
+        if (year % 4 == 0 && (year % 400 == 0 || year % 100 != 0)) {
+            System.out.println(year + " is a leap year");
+        } else {
+            System.out.println(year + " is not a leap year");
+        }
+
+        // TODO 4 ✅ Largest of three using only if/else
+        int a = 30;
+        int b = 40;
+        int c = 50;
+        if (a >= b && a >= c) {
+            System.out.println("A is the largest: " + a);
+        } else if (b >= a && b >= c) {
+            System.out.println("B is the largest: " + b);
+        } else {
+            System.out.println("C is the largest: " + c);
+        }
     }
 }
