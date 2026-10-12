@@ -25,7 +25,7 @@ src/
 ## Checklist
 
 ### Day 1 (Mon): Basics
-- [ ] `Variables`: types, naming, `final`, `var`
+- [x] `Variables`: types, naming, declare vs init, `final`, `var`, primitive vs reference, `null`, scope
 - [ ] `TypesAndOperators`: 8 primitives, casting, integer division, `%`, overflow
 - [ ] `Conditions`: if / else if / else, `&&` `||` `!`
 - [ ] `SwitchAndTernary`: `? :`, old switch, new `->` switch

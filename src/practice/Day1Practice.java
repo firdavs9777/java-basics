@@ -12,6 +12,10 @@ public class Day1Practice {
     public static void main(String[] args) {
         variables3();
         variables4();
+        variables5();
+        variables6();
+        variables7();
+        variables8();
         types1();
         types2();
         types3();
@@ -33,6 +37,31 @@ public class Day1Practice {
 
     static void variables4() {
         // Use `var` for a local variable and hover it in IntelliJ to see the inferred type.
+    }
+
+    static void variables5() {
+        // Which names are legal? Try each one, and keep only the legal ones:
+        // fuelType, 1stStation, station_name, $price, my-queue, int, MAX_LITERS
+        // Then rename the legal-but-bad-style ones to follow Java conventions.
+    }
+
+    static void variables6() {
+        int chilonzorQueue = 20;
+        int bodomzorQueue = 40;
+        // Swap the two values using a temp variable, then print both. Expected: 40 20
+    }
+
+    static void variables7() {
+        int[] pricesA = {4300, 5300};
+        int[] pricesB = pricesA;
+        // Predict BEFORE running: after `pricesB[1] = 6000;` what is pricesA[1]? Then run it.
+        // Then make pricesB a real copy with pricesA.clone() and show that changing it no longer affects pricesA.
+    }
+
+    static void variables8() {
+        String favoriteStation = null;
+        // Print "No favourite yet" if favoriteStation is null, otherwise print its length.
+        // Test with null and with "Chilonzor" (expected: 9). Never call .length() on null!
     }
 
     // ----- Types and Operators -----
