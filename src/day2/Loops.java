@@ -72,10 +72,75 @@ public class Loops {
 
         // ===== Exercises =====
         // TODO 1: Print all numbers from 10 down to 1 with a for loop.
+        for(int i=10; i>=1; i--)
+        {
+            System.out.println(i);
+        }
         // TODO 2: Sum all even numbers from 1 to 100 (answer: 2550).
+        int evenSum = 0;
+        for(int i=2; i<=100; i+=2){
+            evenSum += i;
+        }
+        System.out.println(evenSum);
         // TODO 3: Find the minimum and its index in {20, 40, 15, 35, 10} in one loop.
+        int[] numbers = {20,40, 15,35,10};
+        int minVal = numbers[0];
+        int minIndex = 0;
+        for(int i = 1; i<numbers.length; i++){
+            if(numbers[i] < minVal){
+                minVal = numbers[i];
+                minIndex = i;
+            }
+        }
+        System.out.println("Minimum Value: " + minVal);
+        System.out.println("Minimum Index: " + minIndex);
         // TODO 4: Reverse the digits of int n = 1234 into 4321 using a while loop.
+        int number = 1234;
+        int reversed = 0;
+        while(number > 0){
+            int digit = number % 10; // step 1 => 4, step 2 => 3, step 3 => 2, step 4 => 1
+            reversed = reversed * 10 + digit; // step 1=> 4,
+            number = number / 10; // 1234,
+        }
+        System.out.println(reversed);
         // TODO 5 (DSA classic): FizzBuzz. For 1..30 print "Fizz" if divisible by 3,
         //         "Buzz" if by 5, "FizzBuzz" if by both, otherwise the number.
+
+        int[] nums = {3, 2, 4};
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                System.out.println("i=" + i + ", j=" + j + " → " + nums[i] + " + " + nums[j]);
+            }
+        }
+        // Todo 6
+        for(int test = 10; test >= 1; test--){
+            System.out.println(test);
+        }
+        // Todo 7
+        int total = 0;
+        for(int i = 0; i<=100; i++){
+           if(i % 2 == 0){
+               total += i;
+           }
+        }
+        System.out.println(total);
+
+
+        // Last Fizzbuzz
+        for(int i = 1; i<=30; i++){
+            if(i % 3 == 0 && i % 5 == 0){
+                System.out.println("FizzBuzz");
+            }
+            else if(i % 3 == 0){
+                System.out.println("Fizz");
+            }
+            else if(i % 5 == 0){
+                System.out.println("Buzz");
+            }
+            else {
+                System.out.println(i);
+            }
+        }
+
     }
 }
