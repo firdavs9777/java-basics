@@ -16,7 +16,7 @@ src/
 ## Order from here (updated Oct 27, 2026)
 
 1. ~~Finish the `Methods` TODOs~~ ✅
-2. Go back to Module 2: `NestedLoops`, then `UserInput` (Scanner matters for Baekjoon-style tests that read their own input)
+2. Go back to Module 2: ~~`NestedLoops`~~ ✅, then `UserInput` (Scanner matters for Baekjoon-style tests that read their own input)
 3. `Recursion`, then `Strings`, then Module 4
 4. **Every day:** 2 LeetCode problems, plus extra reps from the matching `practice/DayNPractice` file
 
@@ -43,8 +43,8 @@ src/
 
 ### Module 2: Loops and input
 - [x] `Loops`: for, while, do-while, break, continue
-- [ ] `NestedLoops`: patterns, tables, first taste of O(n²) ← **current**
-- [ ] `UserInput`: Scanner, printf ⚠️ skipped, do after NestedLoops
+- [x] `NestedLoops`: patterns, tables, first taste of O(n²)
+- [ ] `UserInput`: Scanner, printf ← **current**
 - [ ] `practice/Day2Practice` done
 
 ### Module 3: Methods, arrays, strings ⭐ most important for DSA

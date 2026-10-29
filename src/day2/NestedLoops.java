@@ -76,10 +76,44 @@ public class NestedLoops {
 
         // ===== Exercises =====
         // TODO 1: Print an upside-down triangle of height 5 (*****, ****, ... , *).
+
+        int max = 5;
+        for (int row = max; row >= 1; row--) {   // FIXED: was row >= 0, printed an extra empty line
+            for (int col = 1; col <= row; col++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
         // TODO 2: Print the 9x9 multiplication table, but only the lower-left half (j <= i).
+
+        for(int i = 1; i<=9; i++){
+            for(int j = 1; j<=i;j++){
+                System.out.print((i*j) + " ");
+            }
+            System.out.println();
+        }
         // TODO 3: Count how many operations a loop with j starting at i+1 does for n = 100.
         //         (It is every pair once: n*(n-1)/2 = 4950. Still O(n^2).)
+       int num = 100;
+        int count = 0;
+        for(int i = 0; i< num; i++){
+            for(int j = i+1; j<num;j++){
+                count++;
+            }
+        }
+        System.out.println(count);
         // TODO 4 (DSA classic): Two Sum brute force. Given int[] nums = {2, 7, 11, 15} and
         //         target = 9, use two nested loops to print the indices of two numbers that add up to target.
+
+        int[] nums = {2, 7, 11, 15};
+        int target = 18;
+        for(int i = 0; i< nums.length; i++){
+            for(int j=i+1; j<nums.length; j++){
+                if(target == nums[i] + nums[j])
+                {
+                    System.out.println("Indices: " + i + ", " + j);
+                }
+            }
+        }
     }
 }
