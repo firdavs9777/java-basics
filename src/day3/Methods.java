@@ -1,5 +1,6 @@
 package day3;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 /*
@@ -120,12 +121,16 @@ public class Methods {
         System.out.println(Arrays.toString(t));
         // TODO 8: Write static boolean isSorted(int[] arr) with an early return false.
         //         Print isSorted(new int[]{3, 7, 9, 12, 20}) and isSorted(new int[]{3, 9, 7}). Expected: true, false
-
+        System.out.println( isSorted(new int[]{3,7,9,23,30}));
+        System.out.println( isSorted(new int[] {3,9,7}));
         // TODO 9: Write static boolean isPalindrome(int x) (your LeetCode #9 solution).
         //         Print isPalindrome(121), isPalindrome(123), isPalindrome(-121). Expected: true, false, false
 
+        System.out.println(isPalindrome(22));
+        System.out.println(isPalindrome(131));
         // TODO 10: Write static String fizzBuzz(int n) that returns the answer for ONE number.
         //          Loop 1..15 in main and print each result. Expected last line: FizzBuzz
+        System.out.println(fizzBuzz(22));
     }
 
     // ===== Section 1-4 methods =====
@@ -300,12 +305,42 @@ public class Methods {
     }
     // TODO 8: Write static boolean isSorted(int[] arr) with an early return false.
     //         Print isSorted(new int[]{3, 7, 9, 12, 20}) and isSorted(new int[]{3, 9, 7}). Expected: true, false
-//    static boolean isSorted(int[] arr){
-//
-//    }
+    static boolean isSorted(int[] arr){
+        for(int i=1; i<arr.length; i++){
+            if(arr[i] < arr[i-1]){
+                return false;
+            }
+        }
+        return true;
+    }
     // TODO 9: Write static boolean isPalindrome(int x) (your LeetCode #9 solution).
     //         Print isPalindrome(121), isPalindrome(123), isPalindrome(-121). Expected: true, false, false
 
+    static boolean isPalindrome(int x){
+        if(x<0){
+            return false;
+        }
+        // 121
+        int original = x;
+        int reversed = 0;
+        while(x>0){
+            int digit = x % 10;
+            reversed = reversed * 10 + digit;
+            x = x / 10;
+        }
+        return reversed == original;
+    }
     // TODO 10: Write static String fizzBuzz(int n) that returns the answer for ONE number.
     //          Loop 1..15 in main and print each result. Expected last line: FizzBuzz
+        static String fizzBuzz(int n) {
+                if (n % 3 == 0 && n % 5 == 0) {
+                    return "FizzBuzz";
+                } else if (n % 3 == 0) {
+                    return "Fizz";
+                } else if (n % 5 == 0) {
+                    return "Buzz";
+                } else {
+                    return String.valueOf(n);
+                }
+        }
 }
