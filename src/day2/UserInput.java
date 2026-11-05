@@ -54,16 +54,63 @@ public class UserInput {
         System.out.println(receipt);
         System.out.printf("|%-10s|%5d|%n", "Bodomzor", 40); // - = left align, 5 = width
 
-        // 8. Close the scanner when done (frees the resource)
-        sc.close();
+        // 8. Close the scanner when done (frees the resource) -> done at the end of main, after the exercises
         // Modern way: try-with-resources closes it automatically:
         // try (Scanner in = new Scanner(System.in)) { ... }
         // Note: closing a Scanner on System.in also closes System.in, so create only one.
 
         // ===== Exercises =====
-        // TODO 1: Ask for two ints and print their sum, difference, and product with printf.
+        // TODO 1: Ask for two ints and print their sum, difference, and product with printf
+        System.out.print("Enter the first number: ");
+        int num1 = sc.nextInt();
+        System.out.print("Enter the second number: ");
+        int num2 = sc.nextInt();
+        int sum = num1 + num2;
+        int diff = num1 - num2;
+        int product = num1 * num2;
+        System.out.printf("Sum: %d%n", sum);
+        System.out.printf("Difference: %d%n", diff);
+        System.out.printf("Product: %d%n", product);
+
         // TODO 2: Ask for a temperature in Celsius (double) and print Fahrenheit with 1 decimal.
+        System.out.print("Enter temperature in Celsius: ");
+        double celsius = sc.nextDouble();
+        double fahrenheit = (celsius * 9 / 5) + 32;
+        System.out.printf("Fahrenheit: %.1f%n", fahrenheit);
+
         // TODO 3: Ask for an age and keep asking until it is between 0 and 120.
+        int age;
+        while (true) {
+            System.out.print("How old are you (0-120)? ");
+            if (sc.hasNextInt()) {
+                age = sc.nextInt();
+                if (age >= 0 && age <= 120) break;
+                System.out.println("Out of range, try again.");
+            } else {
+                System.out.println("That is not a number, try again.");
+                sc.next(); // throw away the bad token, otherwise we loop forever
+            }
+        }
+
         // TODO 4: Read an int n, then read n numbers and print their average with %.2f.
+        System.out.print("How many numbers? ");
+        int n = sc.nextInt();
+        int[] numbers = new int[n];
+        System.out.printf("Enter %d numbers: ", n);
+        for (int i = 0; i < n; i++) {
+            numbers[i] = sc.nextInt();
+        }
+        int tot = 0;
+        for (int i = 0; i < n; i++) {
+            tot += numbers[i];
+        }
+        if (n > 0) {
+            double average = (double) tot / n;
+            System.out.printf("Average: %.2f%n", average);
+        } else {
+            System.out.println("No numbers, no average.");
+        }
+
+        sc.close();
     }
 }
