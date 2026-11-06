@@ -1,5 +1,7 @@
 package day3;
 
+import java.util.Locale;
+
 /*
  * Day 3 · Lesson 4: Strings
  * A String is an immutable sequence of chars. StringBuilder is its mutable, fast cousin.
@@ -14,6 +16,12 @@ public class Strings {
         station = station.toUpperCase();    // reassign to keep it
         System.out.println(station);        // CHILONZOR
 
+        // Practice
+        String st = "Test";
+        st.toUpperCase();
+        System.out.println(st);
+
+
         // 2. == vs equals (classic trap): == compares references, equals compares content
         String a = "Bodomzor";
         String b = new String("Bodomzor");
@@ -21,6 +29,11 @@ public class Strings {
         System.out.println(a.equals(b));                  // true  <- always use this
         System.out.println(a.equalsIgnoreCase("BODOMZOR")); // true
 
+        // Practice playground
+        String first = "test";
+        String second = new String("test");
+        System.out.println(first.equals(second)); // true
+        System.out.println(first.equalsIgnoreCase("TEST")); // true
         // 3. Common methods
         String s = "  Chilonzor Gas Station  ";
         String t = s.trim();                      // "Chilonzor Gas Station"
@@ -32,6 +45,20 @@ public class Strings {
         System.out.println(t.toLowerCase());      // chilonzor gas station
         String[] parts = "Chilonzor,Bodomzor,Yunusobod".split(",");
         System.out.println(parts.length + " " + parts[2]); // 3 Yunusobod
+
+        // Practice playground
+
+        String exam = "   Exam is over, no go back home  ";
+        String result = exam.trim();
+        System.out.println(result.length());
+        System.out.println(result.charAt(1));
+        System.out.println(result.substring(0,3));
+        System.out.println(result.indexOf("home"));
+        System.out.println(result.contains("back"));
+        System.out.println(result.toLowerCase());
+        String[] regions = "Andijon,Toshkent, Samarqand, Buxoro".split(",");
+        System.out.println(regions[2]);
+
 
         // 4. compareTo: alphabetical order. <0 means "comes before", 0 equal, >0 "comes after"
         System.out.println("Bodomzor".compareTo("Chilonzor") < 0); // true
