@@ -1,7 +1,5 @@
 package day3;
 
-import java.util.Locale;
-
 /*
  * Day 3 · Lesson 4: Strings
  * A String is an immutable sequence of chars. StringBuilder is its mutable, fast cousin.
@@ -18,9 +16,10 @@ public class Strings {
 
         // Practice
         String st = "Test";
-        st.toUpperCase();
-        System.out.println(st);
-
+        st.toUpperCase();                   // result thrown away!
+        System.out.println(st);             // Test
+        st = st.toUpperCase();              // reassign to keep it
+        System.out.println(st);             // TEST
 
         // 2. == vs equals (classic trap): == compares references, equals compares content
         String a = "Bodomzor";
@@ -34,6 +33,7 @@ public class Strings {
         String second = new String("test");
         System.out.println(first.equals(second)); // true
         System.out.println(first.equalsIgnoreCase("TEST")); // true
+
         // 3. Common methods
         String s = "  Chilonzor Gas Station  ";
         String t = s.trim();                      // "Chilonzor Gas Station"
@@ -47,18 +47,18 @@ public class Strings {
         System.out.println(parts.length + " " + parts[2]); // 3 Yunusobod
 
         // Practice playground
-
         String exam = "   Exam is over, no go back home  ";
         String result = exam.trim();
-        System.out.println(result.length());
-        System.out.println(result.charAt(1));
-        System.out.println(result.substring(0,3));
-        System.out.println(result.indexOf("home"));
-        System.out.println(result.contains("back"));
-        System.out.println(result.toLowerCase());
+        System.out.println(result.length());          // 29
+        System.out.println(result.charAt(1));         // x
+        System.out.println(result.substring(0, 3));   // Exa
+        System.out.println(result.indexOf("home"));   // 25
+        System.out.println(result.contains("back"));  // true
+        System.out.println(result.toLowerCase());     // exam is over, no go back home
         String[] regions = "Andijon,Toshkent, Samarqand, Buxoro".split(",");
-        System.out.println(regions[2]);
-
+        System.out.println("[" + regions[2] + "]");        // [ Samarqand] <- space after the comma stays in the piece
+        System.out.println("[" + regions[2].trim() + "]"); // [Samarqand]
+        // Or split on a regex: split(",\\s*") means a comma plus any spaces after it.
 
         // 4. compareTo: alphabetical order. <0 means "comes before", 0 equal, >0 "comes after"
         System.out.println("Bodomzor".compareTo("Chilonzor") < 0); // true

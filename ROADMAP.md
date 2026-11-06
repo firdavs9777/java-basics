@@ -13,11 +13,11 @@ src/
 └── playground/       ← SCRATCH: try anything, break things, no rules.
 ```
 
-## Order from here (updated Oct 27, 2026)
+## Order from here (updated Nov 6, 2026)
 
 1. ~~Finish the `Methods` TODOs~~ ✅
 2. Go back to Module 2: ~~`NestedLoops`~~ ✅, then ~~`UserInput`~~ ✅ (Scanner matters for Baekjoon-style tests that read their own input)
-3. `Recursion`, then `Strings`, then Module 4
+3. ~~`Recursion`~~ ✅, then `Strings` (in progress), then Module 4
 4. **Every day:** 2 LeetCode problems, plus extra reps from the matching `practice/DayNPractice` file
 
 ## Daily routine
@@ -50,8 +50,8 @@ src/
 ### Module 3: Methods, arrays, strings ⭐ most important for DSA
 - [x] `ArraysBasics`: 1D, 2D, `Arrays.sort/toString`
 - [x] `Methods`: params, return, overloading, pass-by-value
-- [ ] `Recursion`: base case, call stack ← **current**
-- [ ] `Strings`: `equals` vs `==`, `charAt`, `StringBuilder` (why `+=` in a loop is O(n²)), `c - 'a'`
+- [x] `Recursion`: base case, call stack (redo `sumTo`, `countEven`, `power` from memory in `Playground`)
+- [ ] `Strings`: `equals` vs `==`, `charAt`, `StringBuilder` (why `+=` in a loop is O(n²)), `c - 'a'` ← **current** (sections 1–3 practised; TODOs 1–5 left)
 - [ ] Big-O note: in your Recursion or Arrays practice, explain why a solution is O(n²) vs O(n) (e.g. Two Sum brute force vs HashMap)
 - [ ] `practice/Day3Practice` done
 
